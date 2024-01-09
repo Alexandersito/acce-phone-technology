@@ -1,0 +1,35 @@
+$(document).ready(function () {
+    $('.your-slider').slick({
+        autoplay: true, // Autoreproducción
+        autoplaySpeed: 3000, // Velocidad de autoreproducción en milisegundos
+        dots: true, // Muestra los puntos de navegación
+        arrows: true, // Muestra las flechas de navegación
+        infinite: true, // Bucle infinito
+        speed: 500, // Velocidad de la transición en milisegundos
+        slidesToShow: 1, // Cantidad de slides a mostrar
+        slidesToScroll: 1 // Cantidad de slides a desplazar
+        // Puedes ajustar estas opciones según tus necesidades
+    });
+});
+
+const menuHamburguesa = document.querySelector('.menu-hamburguesa');
+const menuMovil = document.querySelector('.menu-movil');
+
+let menuDesplegado = false;
+
+menuHamburguesa.addEventListener('click', function () {
+    if (!menuDesplegado) {
+        menuMovil.style.display = 'block';
+        setTimeout(() => {
+            menuMovil.classList.add('mostrar-menu');
+        }, 10);
+    } else {
+        menuMovil.classList.remove('mostrar-menu');
+        setTimeout(() => {
+            menuMovil.style.display = 'none';
+        }, 300);
+    }
+    menuDesplegado = !menuDesplegado;
+});
+
+
