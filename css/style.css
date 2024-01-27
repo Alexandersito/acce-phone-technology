@@ -50,6 +50,10 @@ html {
     /* Color del fondo */
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .negrita {
     font-weight: bold;
 }
@@ -83,7 +87,14 @@ html {
 /*===========================================*/
 /*HEADER*/
 /*===========================================*/
-/* Estilos generales */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -235,6 +246,146 @@ nav {
 }
 
 /*===========================================*/
+/*NOVEDADES*/
+/*===========================================*/
+
+/* COLUMNAS */
+
+.grid-novedades {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.item-novedad {
+    background-color: #ff0000;
+}
+
+.flip-card {
+    perspective: 1000px;
+    width: 320px;
+    height: 420px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.459);
+    border-radius: 10px;
+}
+
+.flip-card.hover {
+    transform: rotateY(180deg);
+}
+
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    /* justify-content: center; */
+    font-size: 24px;
+}
+
+.flip-card-front {
+    border-radius: 10px;
+    background-image: url(../img/bg-card.png);
+    background-size: cover;
+    background-position: center center;
+    align-items: center;
+
+}
+
+.slider-card {
+    width: 100%;
+    /* background-color: rgba(0, 0, 0, 0.315); */
+    height: 350px;
+}
+
+.flip-card-back {
+    /* background-color: #e74c3c; */
+    transform: rotateY(180deg);
+}
+
+.flip-card-btn {
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    border-bottom-right-radius: 10px;
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none !important;
+    background-color: black;
+}
+
+.cart-card-btn {
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    border-bottom-left-radius: 10px;
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none !important;
+    background-color: black;
+}
+
+.titulo-card {
+    position: absolute;
+    top: 50px;
+    font-weight: 100;
+    left: 50%;
+    padding: 0px;
+    font-size: 18px;
+    transform: translate(-50%, -50%);
+
+}
+
+/* BACK CARD */
+
+.product-box {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.product-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.product-feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.feature-icon {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #3498db;
+}
+
+.feature-text {
+    font-size: 14px;
+}
+
+/*===========================================*/
 /*CARRUSEL*/
 /*===========================================*/
 
@@ -363,6 +514,30 @@ nav {
         padding: 8px 25px;
         font-size: 12px;
         margin-bottom: 15px;
+    }
+
+    /*===========================================*/
+    /*NOVEDADES*/
+    /*===========================================*/
+    .grid-novedades {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 20PX;
+    }
+
+    .flip-card {
+        perspective: 1000px;
+        width: 100%;
+        height: 420px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.5s;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.459);
+        border-radius: 10px;
+    }
+
+    .item-novedad {
+        background-color: red;
     }
 
 }
